@@ -140,5 +140,56 @@ namespace orbBasicUI
         }
 
         #endregion
+
+        #region orbBasic
+
+        private void RunCode(object sender, RoutedEventArgs e)
+        {
+            if (sphero == null)
+            {
+                MessageBox.Show("No Sphero connected.");
+                return;
+            }
+
+            var area = StorageArea.Temporary;
+            IEnumerable<string> programLines = GetOrbBasicLines();
+            foreach (var programLine in programLines)
+            {
+                Console.WriteLine(programLine);
+            }
+            sphero.EraseOrbBasicStorage(area);
+            sphero.SendOrbBasicProgram(area, programLines);
+
+            // TODO: Split this into separate button?
+            sphero.ExecuteOrbBasicProgram(area, 10);
+        }
+
+        private void Abort(object sender, RoutedEventArgs e)
+        {
+            sphero.AbortOrbBasicProgram();
+        }
+
+        private IEnumerable<string> GetOrbBasicLines()
+        {
+            var rawLines = Code.Text.Split('\n');
+            var result = new List<string>();
+            foreach (var rawLine in rawLines)
+            {
+                if (!string.IsNullOrEmpty(rawLine) && rawLine[0] != '\'')
+                {
+                    var line = rawLine;
+
+                    if (!line.EndsWith("\r"))
+                    {
+                        line += '\r';
+                    }
+
+                    result.Add(line);
+                }
+            }
+            return result;
+        }
+
+        #endregion
     }
 }

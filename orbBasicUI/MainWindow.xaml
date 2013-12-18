@@ -8,12 +8,13 @@
         <Button Content="Find Devices" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Width="120" Height="40" Click="FindDevices"/>
         <ListBox x:Name="Devices" HorizontalAlignment="Left" Height="160" Margin="20,80,0,0" VerticalAlignment="Top" Width="120"/>
         <Button Content="Connect" HorizontalAlignment="Left" Margin="20,260,0,0" VerticalAlignment="Top" Width="120" Height="40" Click="ConnectToSelectedDevice"/>
-        <TextBox HorizontalAlignment="Left" Height="280" Margin="160,20,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="160"/>
-        <Button Content="Run!" HorizontalAlignment="Left" Margin="340,160,0,0" VerticalAlignment="Top" Width="160" Height="140"/>
+        <TextBox x:Name="Code" HorizontalAlignment="Left" Height="280" Margin="160,20,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="160" AcceptsReturn="True"/>
+        <Button Content="Run!" HorizontalAlignment="Left" Margin="340,160,0,0" VerticalAlignment="Top" Width="160" Height="80" Click="RunCode"/>
         <TextBox x:Name="R_value" HorizontalAlignment="Left" Height="20" Margin="360,31,0,0" TextWrapping="Wrap" Text="255" VerticalAlignment="Top" Width="30" TextChanged="R_value_TextChanged"/>
         <TextBox x:Name="G_value" HorizontalAlignment="Left" Height="20" Margin="405,31,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="30" TextChanged="G_value_TextChanged"/>
         <TextBox x:Name="B_value" HorizontalAlignment="Left" Height="20" Margin="450,31,0,0" TextWrapping="Wrap" Text="255" VerticalAlignment="Top" Width="30" RenderTransformOrigin="1.125,0.625" TextChanged="B_value_TextChanged"/>
         <Button Content="Set Colour" HorizontalAlignment="Left" Margin="360,80,0,0" VerticalAlignment="Top" Width="120" Height="40" Click="SetSelectedColor"/>
+        <Button Content="Abort" HorizontalAlignment="Left" Margin="340,260,0,0" VerticalAlignment="Top" Width="160" Height="40" Click="Abort"/>
 
     </Grid>
 </Window>
