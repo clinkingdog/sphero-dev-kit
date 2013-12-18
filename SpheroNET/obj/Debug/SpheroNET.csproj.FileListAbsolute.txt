@@ -1,6 +1,0 @@
-C:\Users\Nick\dev\spheronet-0-1-1\SpheroNET\bin\Debug\SpheroNET.dll
-C:\Users\Nick\dev\spheronet-0-1-1\SpheroNET\bin\Debug\SpheroNET.pdb
-C:\Users\Nick\dev\spheronet-0-1-1\SpheroNET\bin\Debug\InTheHand.Net.Personal.dll
-C:\Users\Nick\dev\spheronet-0-1-1\SpheroNET\obj\Debug\SpheroNET.csprojResolveAssemblyReference.cache
-C:\Users\Nick\dev\spheronet-0-1-1\SpheroNET\obj\Debug\SpheroNET.dll
-C:\Users\Nick\dev\spheronet-0-1-1\SpheroNET\obj\Debug\SpheroNET.pdb
