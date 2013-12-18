@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,8 @@ namespace orbBasicUI
     {
         #region Setup
 
+        private const string DefaultOrbBasicProgramFilePath = "orbbasic.txt";
+
         private SpheroConnector connector = new SpheroConnector();
         private Sphero sphero = null;
 
@@ -30,6 +33,7 @@ namespace orbBasicUI
         {
             InitializeComponent();
             FindDevices();
+            LoadDefaultCodeFromFile();
             SetColourPanelBackground();
         }
 
@@ -143,6 +147,11 @@ namespace orbBasicUI
         #endregion
 
         #region orbBasic
+
+        private void LoadDefaultCodeFromFile()
+        {
+            Code.Text = File.ReadAllText(DefaultOrbBasicProgramFilePath, Encoding.UTF8);
+        }
 
         private void RunCode(object sender, RoutedEventArgs e)
         {
