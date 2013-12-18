@@ -49,6 +49,7 @@ namespace orbBasicUI
 
         private void FindDevices()
         {
+            Devices.Items.Clear();
             connector.Scan();
             var deviceNames = connector.DeviceNames;
             for (int i = 0; i < deviceNames.Count; i++)
