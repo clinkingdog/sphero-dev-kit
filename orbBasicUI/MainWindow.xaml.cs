@@ -64,7 +64,12 @@ namespace orbBasicUI
             }
         }
 
-        private void ConnectToSelectedDevice(object sender, RoutedEventArgs e)
+        private void Devices_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            ConnectToSelectedDevice();
+        }
+
+        private void ConnectToSelectedDevice()
         {
             var selectedIndex = Devices.SelectedIndex;
 

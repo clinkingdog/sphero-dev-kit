@@ -6,8 +6,7 @@
         <Rectangle x:Name="ColourPanel" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="60" Margin="220,720,0,0" Stroke="Black" VerticalAlignment="Top" Width="300"/>
 
         <Button Content="Find Devices" HorizontalAlignment="Left" Margin="20,280,0,0" VerticalAlignment="Top" Width="160" Height="40" Click="FindDevices"/>
-        <ListBox x:Name="Devices" Height="180" Margin="20,20,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="160"/>
-        <Button Content="Connect" HorizontalAlignment="Left" Margin="20,220,0,0" VerticalAlignment="Top" Width="160" Height="40" Click="ConnectToSelectedDevice"/>
+        <ListBox x:Name="Devices" Height="240" Margin="20,20,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="160" MouseDoubleClick="Devices_MouseDoubleClick"/>
         <TextBox x:Name="Code" HorizontalAlignment="Left" Height="640" Margin="220,20,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="480" AcceptsReturn="True"/>
         <Button Content="Run!" HorizontalAlignment="Left" Margin="540,681,0,0" VerticalAlignment="Top" Width="140" Height="39" Click="RunCode"/>
         <TextBox x:Name="R_value" HorizontalAlignment="Left" Height="19" Margin="240,741,0,0" TextWrapping="Wrap" Text="255" VerticalAlignment="Top" Width="30" TextChanged="R_value_TextChanged"/>
