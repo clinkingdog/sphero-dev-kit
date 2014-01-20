@@ -205,10 +205,6 @@ namespace orbBasicUI
 
             var area = StorageArea.Temporary;
             IEnumerable<string> programLines = GetOrbBasicLines();
-            foreach (var programLine in programLines)
-            {
-                Console.WriteLine(programLine);
-            }
             sphero.EraseOrbBasicStorage(area);
             sphero.SendOrbBasicProgram(area, programLines);
 
