@@ -103,7 +103,7 @@ namespace orbBasicUI
             }
         }
 
-        private void LoadSelectedFile_Click(object sender, RoutedEventArgs e)
+        private void SampleCodeFiles_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             LoadSelectedCodeFile();
         }
@@ -127,6 +127,42 @@ namespace orbBasicUI
         private void LoadCodeFile(string filename)
         {
             Code.Text = File.ReadAllText(DefaultCodeFileLocation + filename + ".txt");
+            CodeFileName.Text = filename;
+        }
+
+        private void ClearCode_Click(object sender, RoutedEventArgs e)
+        {
+            CodeFileName.Text = string.Empty;
+            Code.Text = string.Empty;
+        }
+
+        private void SaveCode_Click(object sender, RoutedEventArgs e)
+        {
+            SaveCurrentCode();
+        }
+
+        private void SaveCurrentCode()
+        {
+            var filename = CodeFileName.Text;
+
+            if (filename == String.Empty)
+            {
+                return;
+            }
+
+            var filePath = DefaultCodeFileLocation + CodeFileName.Text + ".txt";
+
+            if (File.Exists(filePath))
+            {
+                var result = MessageBox.Show("File exists. Overwrite?", "", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
+
+                if (result != MessageBoxResult.Yes)
+                {
+                    return;
+                }
+            }
+
+            File.WriteAllText(filePath, Code.Text);
         }
 
         #endregion
