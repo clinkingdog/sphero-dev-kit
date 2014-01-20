@@ -76,7 +76,7 @@ namespace orbBasicUI
             try
             {
                 sphero = connector.Connect(selectedIndex);
-                MessageBox.Show("Connected, yay!");
+                Background.Background = new SolidColorBrush(Color.FromRgb(0x66,0xCC,0xEC));
             }
             catch(Exception ex)
             {
