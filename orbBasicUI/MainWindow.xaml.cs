@@ -97,9 +97,9 @@ namespace orbBasicUI
         {
             SampleCodeFiles.Items.Clear();
 
-            foreach (string filename in Directory.EnumerateFiles(DefaultCodeFileLocation))
+            foreach (string filePath in Directory.EnumerateFiles(DefaultCodeFileLocation))
             {
-                SampleCodeFiles.Items.Add(filename.Substring(filename.LastIndexOf('\\') + 1).Replace(".txt", ""));
+                SampleCodeFiles.Items.Add(filePath.Substring(filePath.LastIndexOf('\\') + 1).Replace(".txt", ""));
             }
         }
 
