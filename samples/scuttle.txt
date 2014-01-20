@@ -1,4 +1,4 @@
-﻿' We set color to green and wait for  
+' We set color to green and wait for  
 ' a small bump to start the program 
 ' proper.
 10 basflg 1

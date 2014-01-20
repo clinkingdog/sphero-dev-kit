@@ -1,0 +1,4 @@
+' Set random color
+10 RGB 127 + rnd 128, 127 + rnd 128, 127 + rnd 128
+20 delay 2000
+30 goto 10

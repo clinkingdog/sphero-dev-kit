@@ -24,7 +24,8 @@ namespace orbBasicUI
     {
         #region Setup
 
-        private const string DefaultOrbBasicProgramFilePath = "orbbasic.txt";
+        private const string DefaultCodeFileLocation = "C:\\Users\\Nick\\dev\\sphero-dev-kit\\samples\\";
+        private const string DefaultCodeFileName = "colour-shuffle";
 
         private SpheroConnector connector = new SpheroConnector();
         private Sphero sphero = null;
@@ -33,6 +34,7 @@ namespace orbBasicUI
         {
             InitializeComponent();
             FindDevices();
+            FindCodeFiles();
             LoadDefaultCodeFromFile();
             SetColourPanelBackground();
         }
@@ -80,6 +82,51 @@ namespace orbBasicUI
             {
                 MessageBox.Show(ex.Message, "Error!");
             }
+        }
+
+        #endregion
+
+        #region Code File Management
+
+        private void FindCodeFiles(object sender, RoutedEventArgs e)
+        {
+            FindCodeFiles();
+        }
+
+        private void FindCodeFiles()
+        {
+            SampleCodeFiles.Items.Clear();
+
+            foreach (string filename in Directory.EnumerateFiles(DefaultCodeFileLocation))
+            {
+                SampleCodeFiles.Items.Add(filename.Substring(filename.LastIndexOf('\\') + 1).Replace(".txt", ""));
+            }
+        }
+
+        private void LoadSelectedFile_Click(object sender, RoutedEventArgs e)
+        {
+            LoadSelectedCodeFile();
+        }
+
+        private void LoadDefaultCodeFromFile()
+        {
+            LoadCodeFile(DefaultCodeFileName);
+        }
+
+        private void LoadSelectedCodeFile()
+        {
+            if (SampleCodeFiles.SelectedItem == null)
+            {
+                return;
+            }
+
+            var filename = SampleCodeFiles.SelectedItem.ToString();
+            LoadCodeFile(filename);
+        }
+
+        private void LoadCodeFile(string filename)
+        {
+            Code.Text = File.ReadAllText(DefaultCodeFileLocation + filename + ".txt");
         }
 
         #endregion
@@ -147,11 +194,6 @@ namespace orbBasicUI
         #endregion
 
         #region orbBasic
-
-        private void LoadDefaultCodeFromFile()
-        {
-            Code.Text = File.ReadAllText(DefaultOrbBasicProgramFilePath, Encoding.UTF8);
-        }
 
         private void RunCode(object sender, RoutedEventArgs e)
         {
