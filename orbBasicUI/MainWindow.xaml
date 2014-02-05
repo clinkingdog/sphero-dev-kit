@@ -10,9 +10,9 @@
         <ListBox x:Name="Devices" Height="200" Margin="20,20,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="160" MouseDoubleClick="Devices_MouseDoubleClick"/>
         <TextBox x:Name="Code" HorizontalAlignment="Left" Height="680" Margin="240,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" AcceptsReturn="True"/>
         <Button Content="Run!" HorizontalAlignment="Left" Margin="640,20,0,0" VerticalAlignment="Top" Width="140" Height="700" Click="RunCode"/>
-        <TextBox x:Name="R_value" HorizontalAlignment="Left" Height="19" Margin="40,701,0,0" TextWrapping="Wrap" Text="255" VerticalAlignment="Top" Width="30" TextChanged="R_value_TextChanged" GotKeyboardFocus="SelectAllText"/>
-        <TextBox x:Name="G_value" HorizontalAlignment="Left" Height="19" Margin="85,701,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="30" TextChanged="G_value_TextChanged" RenderTransformOrigin="0.333,7.95" GotKeyboardFocus="SelectAllText"/>
-        <TextBox x:Name="B_value" HorizontalAlignment="Left" Height="19" Margin="130,701,0,0" TextWrapping="Wrap" Text="255" VerticalAlignment="Top" Width="30" RenderTransformOrigin="1.125,0.625" TextChanged="B_value_TextChanged" GotKeyboardFocus="SelectAllText"/>
+        <TextBox x:Name="R_value" HorizontalAlignment="Left" Height="19" Margin="40,701,0,0" TextWrapping="Wrap" Text="255" VerticalAlignment="Top" Width="30" TextChanged="RGB_value_TextChanged" GotKeyboardFocus="SelectAllText"/>
+        <TextBox x:Name="G_value" HorizontalAlignment="Left" Height="19" Margin="85,701,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="30" TextChanged="RGB_value_TextChanged" RenderTransformOrigin="0.333,7.95" GotKeyboardFocus="SelectAllText"/>
+        <TextBox x:Name="B_value" HorizontalAlignment="Left" Height="19" Margin="130,701,0,0" TextWrapping="Wrap" Text="255" VerticalAlignment="Top" Width="30" RenderTransformOrigin="1.125,0.625" TextChanged="RGB_value_TextChanged" GotKeyboardFocus="SelectAllText"/>
         <Button Content="Set Colour" HorizontalAlignment="Left" Margin="40,740,0,0" VerticalAlignment="Top" Width="120" Height="20" Click="SetSelectedColor"/>
         <Button Content="Abort" HorizontalAlignment="Left" Margin="640,740,0,0" VerticalAlignment="Top" Width="140" Height="40" Click="Abort"/>
         <ListBox x:Name="SampleCodeFiles" HorizontalAlignment="Left" Height="260" Margin="20,320,0,0" VerticalAlignment="Top" Width="160" SelectionChanged="SampleCodeFiles_SelectionChanged"/>

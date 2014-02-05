@@ -121,17 +121,7 @@ namespace orbBasicUI
             sphero.SetRGBLEDOutput(R, G, B);
         }
 
-        private void R_value_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            SetColourPanelBackground();
-        }
-
-        private void G_value_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            SetColourPanelBackground();
-        }
-
-        private void B_value_TextChanged(object sender, TextChangedEventArgs e)
+        private void RGB_value_TextChanged(object sender, TextChangedEventArgs e)
         {
             SetColourPanelBackground();
         }
