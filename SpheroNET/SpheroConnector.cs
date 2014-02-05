@@ -28,12 +28,12 @@ namespace SpheroNET
             Initialize();
         }
 
-        public Sphero Connect(int index)
+        public Sphero Connect(int index, int retries = 5)
         {
             BluetoothDeviceInfo deviceInfo = _devices.Count > index ? _devices[index] : null;
             if (deviceInfo != null)
             {
-                return new Sphero(Connect(deviceInfo, 5));
+                return new Sphero(Connect(deviceInfo, retries));
             }
             else
             {

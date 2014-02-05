@@ -27,6 +27,7 @@ namespace orbBasicUI
         private const string DefaultCodeFileLocation = "C:\\Users\\Nick\\dev\\sphero-dev-kit\\samples\\";
         private const string DefaultCodeFileName = "colour-shuffle";
         private const StorageArea storageArea = StorageArea.Temporary;
+        private const int maxConnectionAttempts = 2;
         private readonly Color connectedColour = Color.FromRgb(0x66, 0xCC, 0xEC);
 
         private SpheroConnector connector = new SpheroConnector();
@@ -85,7 +86,7 @@ namespace orbBasicUI
                 Window.Cursor = Cursors.Wait;
                 // TODO: Disable all controls
 
-                sphero = connector.Connect(selectedIndex);
+                sphero = connector.Connect(selectedIndex, maxConnectionAttempts);
 
                 SetAppearanceToConnected();
             }
