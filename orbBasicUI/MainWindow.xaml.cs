@@ -27,6 +27,7 @@ namespace orbBasicUI
         private const string DefaultCodeFileLocation = "C:\\Users\\Nick\\dev\\sphero-dev-kit\\samples\\";
         private const string DefaultCodeFileName = "colour-shuffle";
         private const StorageArea storageArea = StorageArea.Temporary;
+        private readonly Color connectedColour = Color.FromRgb(0x66, 0xCC, 0xEC);
 
         private SpheroConnector connector = new SpheroConnector();
         private Sphero sphero = null;
@@ -101,9 +102,9 @@ namespace orbBasicUI
 
         private void SetAppearanceToConnected()
         {
-            Background.Background = new SolidColorBrush(Color.FromRgb(0x66, 0xCC, 0xEC));
-            CodePanel.Fill = new SolidColorBrush(Color.FromRgb(0x66, 0xCC, 0xEC));
-            CodePanelTitle.Background = new SolidColorBrush(Color.FromRgb(0x66, 0xCC, 0xEC));
+            Background.Background = new SolidColorBrush(connectedColour);
+            CodePanel.Fill = new SolidColorBrush(connectedColour);
+            CodePanelTitle.Background = new SolidColorBrush(connectedColour);
         }
 
         #endregion
