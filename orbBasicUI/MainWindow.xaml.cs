@@ -26,6 +26,7 @@ namespace orbBasicUI
 
         private const string DefaultCodeFileLocation = "C:\\Users\\Nick\\dev\\sphero-dev-kit\\samples\\";
         private const string DefaultCodeFileName = "colour-shuffle";
+        private const StorageArea storageArea = StorageArea.Temporary;
 
         private SpheroConnector connector = new SpheroConnector();
         private Sphero sphero = null;
@@ -246,13 +247,11 @@ namespace orbBasicUI
                 return;
             }
 
-            var area = StorageArea.Temporary;
             IEnumerable<string> programLines = GetOrbBasicLines();
-            sphero.EraseOrbBasicStorage(area);
-            sphero.SendOrbBasicProgram(area, programLines);
 
-            // TODO: Split this into separate button?
-            sphero.ExecuteOrbBasicProgram(area, 10);
+            sphero.EraseOrbBasicStorage(storageArea);
+            sphero.SendOrbBasicProgram(storageArea, programLines);
+            sphero.ExecuteOrbBasicProgram(storageArea, 10);
         }
 
         private void Abort(object sender, RoutedEventArgs e)
