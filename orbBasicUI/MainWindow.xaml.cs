@@ -86,9 +86,7 @@ namespace orbBasicUI
 
                 sphero = connector.Connect(selectedIndex);
 
-                Background.Background = new SolidColorBrush(Color.FromRgb(0x66,0xCC,0xEC));
-                CodePanel.Fill = new SolidColorBrush(Color.FromRgb(0x66, 0xCC, 0xEC));
-                CodePanelTitle.Background = new SolidColorBrush(Color.FromRgb(0x66, 0xCC, 0xEC));
+                SetAppearanceToConnected();
             }
             catch(Exception ex)
             {
@@ -99,6 +97,13 @@ namespace orbBasicUI
                 Window.Cursor = Cursors.Arrow;
                 // TODO: Re-enable all controls
             }
+        }
+
+        private void SetAppearanceToConnected()
+        {
+            Background.Background = new SolidColorBrush(Color.FromRgb(0x66, 0xCC, 0xEC));
+            CodePanel.Fill = new SolidColorBrush(Color.FromRgb(0x66, 0xCC, 0xEC));
+            CodePanelTitle.Background = new SolidColorBrush(Color.FromRgb(0x66, 0xCC, 0xEC));
         }
 
         #endregion
