@@ -8,7 +8,7 @@
 
         <Button Content="Find Devices" HorizontalAlignment="Left" Margin="20,240,0,0" VerticalAlignment="Top" Width="160" Height="40" Click="FindDevices"/>
         <ListBox x:Name="Devices" Height="200" Margin="20,20,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="160" MouseDoubleClick="Devices_MouseDoubleClick"/>
-        <TextBox x:Name="Code" HorizontalAlignment="Left" Height="680" Margin="240,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" AcceptsReturn="True"/>
+        <TextBox x:Name="Code" HorizontalAlignment="Left" Height="680" Margin="240,40,0,0" VerticalAlignment="Top" Width="340" AcceptsReturn="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"/>
         <Button Content="Run!" HorizontalAlignment="Left" Margin="640,20,0,0" VerticalAlignment="Top" Width="140" Height="700" Click="RunCode"/>
         <TextBox x:Name="R_value" HorizontalAlignment="Left" Height="19" Margin="40,701,0,0" TextWrapping="Wrap" Text="255" VerticalAlignment="Top" Width="30" TextChanged="RGB_value_TextChanged" GotKeyboardFocus="SelectAllText"/>
         <TextBox x:Name="G_value" HorizontalAlignment="Left" Height="19" Margin="85,701,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="30" TextChanged="RGB_value_TextChanged" RenderTransformOrigin="0.333,7.95" GotKeyboardFocus="SelectAllText"/>
