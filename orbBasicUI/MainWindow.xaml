@@ -1,4 +1,4 @@
-﻿<Window x:Class="orbBasicUI.MainWindow"
+﻿<Window x:Name="Window" x:Class="orbBasicUI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Sphero orbBasic GUI" Height="832" Width="809">

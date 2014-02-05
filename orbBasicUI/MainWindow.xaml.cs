@@ -81,6 +81,9 @@ namespace orbBasicUI
 
             try
             {
+                Window.Cursor = Cursors.Wait;
+                // TODO: Disable all controls
+
                 sphero = connector.Connect(selectedIndex);
 
                 Background.Background = new SolidColorBrush(Color.FromRgb(0x66,0xCC,0xEC));
@@ -90,6 +93,11 @@ namespace orbBasicUI
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error!");
+            }
+            finally
+            {
+                Window.Cursor = Cursors.Arrow;
+                // TODO: Re-enable all controls
             }
         }
 
