@@ -95,7 +95,7 @@ namespace SpheroNET
                     if (i == (retries - 1))
                         throw new Exception(
                             string.Format(
-                            "Could not connect after {0} retries.", retries), ex);
+                            "Could not connect after {0} attempts.", retries), ex);
                 }
             }
             NetworkStream stream = _client.GetStream();
