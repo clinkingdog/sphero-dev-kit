@@ -1,7 +1,7 @@
 ﻿<Window x:Class="orbBasicUI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Sphero orbBasic Testing GUI" Height="832" Width="809">
+        Title="Sphero orbBasic GUI" Height="832" Width="809">
     <Grid x:Name="Background" Background="#FFC7C7C7" Height="802" VerticalAlignment="Top" Margin="0,0,0,-1" HorizontalAlignment="Left" Width="799">
         <Rectangle x:Name="CodePanel" Fill="#FFC7C7C7" HorizontalAlignment="Left" Height="760" Margin="220,20,0,0" Stroke="Black" VerticalAlignment="Top" Width="380"/>
         <Rectangle x:Name="ColourPanel" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="99" Margin="20,681,0,0" Stroke="Black" VerticalAlignment="Top" Width="160"/>
