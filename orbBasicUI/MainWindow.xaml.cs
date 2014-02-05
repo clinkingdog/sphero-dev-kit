@@ -92,7 +92,7 @@ namespace orbBasicUI
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error!");
+                MessageBox.Show(ex.Message, "Error!", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
             }
             finally
             {
