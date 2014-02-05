@@ -81,7 +81,10 @@ namespace orbBasicUI
             try
             {
                 sphero = connector.Connect(selectedIndex);
+
                 Background.Background = new SolidColorBrush(Color.FromRgb(0x66,0xCC,0xEC));
+                CodePanel.Fill = new SolidColorBrush(Color.FromRgb(0x66, 0xCC, 0xEC));
+                CodePanelTitle.Background = new SolidColorBrush(Color.FromRgb(0x66, 0xCC, 0xEC));
             }
             catch(Exception ex)
             {
