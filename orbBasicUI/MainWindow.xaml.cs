@@ -144,6 +144,15 @@ namespace orbBasicUI
             ColourPanel.Fill = new SolidColorBrush(Color.FromRgb(R, G, B));
         }
 
+        private void SelectAllText(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            var textBox = e.OriginalSource as TextBox;
+            if (textBox != null)
+            {
+                textBox.SelectAll();
+            }
+        }
+
         #endregion
 
         #region Code File Management
@@ -273,14 +282,5 @@ namespace orbBasicUI
         }
 
         #endregion
-
-        private void SelectAllText(object sender, KeyboardFocusChangedEventArgs e)
-        {
-            var textBox = e.OriginalSource as TextBox;
-            if (textBox != null)
-            {
-                textBox.SelectAll();
-            }
-        }
     }
 }
