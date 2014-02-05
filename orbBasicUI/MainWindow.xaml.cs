@@ -91,6 +91,68 @@ namespace orbBasicUI
 
         #endregion
 
+        #region Colour
+
+        private void SetSelectedColor(object sender, RoutedEventArgs e)
+        {
+            if (sphero == null)
+            {
+                MessageBox.Show("No Sphero connected.");
+                return;
+            }
+
+            byte R, G, B;
+
+            try
+            {
+                R = byte.Parse(R_value.Text);
+                G = byte.Parse(G_value.Text);
+                B = byte.Parse(B_value.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Yeah, or you could try actual byte-size numbers, shit-for-brains.");
+                return;
+            }
+
+            sphero.SetRGBLEDOutput(R, G, B);
+        }
+
+        private void R_value_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SetColourPanelBackground();
+        }
+
+        private void G_value_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SetColourPanelBackground();
+        }
+
+        private void B_value_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SetColourPanelBackground();
+        }
+
+        private void SetColourPanelBackground()
+        {
+            byte R, G, B;
+
+            try
+            {
+                R = byte.Parse(R_value.Text);
+                G = byte.Parse(G_value.Text);
+                B = byte.Parse(B_value.Text);
+            }
+            catch
+            {
+                return;
+            }
+
+            ColourPanel.Fill = new SolidColorBrush(Color.FromRgb(R, G, B));
+        }
+
+        #endregion
+
         #region Code File Management
 
         private void FindCodeFiles(object sender, RoutedEventArgs e)
@@ -168,68 +230,6 @@ namespace orbBasicUI
             }
 
             File.WriteAllText(filePath, Code.Text);
-        }
-
-        #endregion
-
-        #region Colour
-
-        private void SetSelectedColor(object sender, RoutedEventArgs e)
-        {
-            if (sphero == null)
-            {
-                MessageBox.Show("No Sphero connected.");
-                return;
-            }
-
-            byte R, G, B;
-
-            try
-            {
-                R = byte.Parse(R_value.Text);
-                G = byte.Parse(G_value.Text);
-                B = byte.Parse(B_value.Text);
-            }
-            catch
-            {
-                MessageBox.Show("Yeah, or you could try actual byte-size numbers, shit-for-brains.");
-                return;
-            }
-
-            sphero.SetRGBLEDOutput(R, G, B);
-        }
-
-        private void R_value_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            SetColourPanelBackground();
-        }
-
-        private void G_value_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            SetColourPanelBackground();
-        }
-
-        private void B_value_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            SetColourPanelBackground();
-        }
-
-        private void SetColourPanelBackground()
-        {
-            byte R, G, B;
-
-            try
-            {
-                R = byte.Parse(R_value.Text);
-                G = byte.Parse(G_value.Text);
-                B = byte.Parse(B_value.Text);
-            }
-            catch
-            {
-                return;
-            }
-
-            ColourPanel.Fill = new SolidColorBrush(Color.FromRgb(R, G, B));
         }
 
         #endregion
