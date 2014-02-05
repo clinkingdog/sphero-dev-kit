@@ -103,7 +103,7 @@ namespace orbBasicUI
 
         private void SetAppearanceToConnected()
         {
-            Background.Background = new SolidColorBrush(connectedColour);
+            BackgroundPanel.Background = new SolidColorBrush(connectedColour);
             CodePanel.Fill = new SolidColorBrush(connectedColour);
             CodePanelTitle.Background = new SolidColorBrush(connectedColour);
         }
