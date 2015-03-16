@@ -3,6 +3,7 @@ sphero-dev-kit
 
 A tiny GUI for interacting with Sphero from Windows.
 
+ * Turn on Bluetooth on your development machine.
  * Run the app.
  * If your Sphero is not in the list, hit "Find Devices" to re-scan.
   * Note your Sphero must be awake before it can be connected.
